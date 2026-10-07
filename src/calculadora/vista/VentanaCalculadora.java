@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 public class VentanaCalculadora extends JFrame {
     private JTextField campoPrimerNumero = new JTextField(10);
     private JTextField campoSegundoNumero = new JTextField(10);
+    private JTextField campoResultado = new JTextField(15);
     private JButton botonSumar = new JButton("Sumar");
     private JButton botonRestar = new JButton("Restar");
     private JButton botonMultiplicar = new JButton("Multiplicar");
@@ -19,5 +20,6 @@ public class VentanaCalculadora extends JFrame {
     public VentanaCalculadora() {
         setTitle("Calculadora");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        campoResultado.setEditable(false);
     }
 }
