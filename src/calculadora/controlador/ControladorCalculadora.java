@@ -22,6 +22,7 @@ public class ControladorCalculadora {
         ventana.getBotonRaizCuadrada().addActionListener(e -> calcular(new RaizCuadrada(leerPrimero())));
         ventana.getBotonRaizCubica().addActionListener(e -> calcular(new RaizCubica(leerPrimero())));
         ventana.getBotonLogaritmoNatural().addActionListener(e -> calcular(new LogaritmoNatural(leerPrimero())));
+        ventana.getBotonLimpiar().addActionListener(e -> limpiar());
     }
 
     private double leerPrimero() {
@@ -34,5 +35,11 @@ public class ControladorCalculadora {
 
     private void calcular(Operacion operacion) {
         ventana.getCampoResultado().setText(String.valueOf(operacion.calcular()));
+    }
+
+    private void limpiar() {
+        ventana.getCampoPrimerNumero().setText("");
+        ventana.getCampoSegundoNumero().setText("");
+        ventana.getCampoResultado().setText("");
     }
 }
