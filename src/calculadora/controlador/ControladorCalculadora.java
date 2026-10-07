@@ -42,10 +42,13 @@ public class ControladorCalculadora {
         return Double.parseDouble(texto);
     }
 
-    private void ejecutar(OperacionPendiente pendiente) {
+    private void calcular(Operacion operacion) {
+        ventana.getCampoResultado().setText(String.valueOf(operacion.calcular()));
+    }
+
+    private void ejecutar(Runnable accion) {
         try {
-            Operacion operacion = pendiente.crear();
-            ventana.getCampoResultado().setText(String.valueOf(operacion.calcular()));
+            accion.run();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(ventana, "Escribe un valor numerico valido.", "Dato invalido", JOptionPane.ERROR_MESSAGE);
         } catch (IllegalArgumentException e) {
@@ -58,9 +61,4 @@ public class ControladorCalculadora {
         ventana.getCampoSegundoNumero().setText("");
         ventana.getCampoResultado().setText("");
     }
-
-    private interface OperacionPendiente {
-        Operacion crear();
-    }
 }
-
