@@ -16,13 +16,13 @@ public class ControladorCalculadora {
 
     public ControladorCalculadora(VentanaCalculadora ventana) {
         this.ventana = ventana;
-        ventana.getBotonSumar().addActionListener(e -> ejecutar(() -> new Suma(leerPrimero(), leerSegundo())));
-        ventana.getBotonRestar().addActionListener(e -> ejecutar(() -> new Resta(leerPrimero(), leerSegundo())));
-        ventana.getBotonMultiplicar().addActionListener(e -> ejecutar(() -> new Multiplicacion(leerPrimero(), leerSegundo())));
-        ventana.getBotonDividir().addActionListener(e -> ejecutar(() -> new Division(leerPrimero(), leerSegundo())));
-        ventana.getBotonRaizCuadrada().addActionListener(e -> ejecutar(() -> new RaizCuadrada(leerPrimero())));
-        ventana.getBotonRaizCubica().addActionListener(e -> ejecutar(() -> new RaizCubica(leerPrimero())));
-        ventana.getBotonLogaritmoNatural().addActionListener(e -> ejecutar(() -> new LogaritmoNatural(leerPrimero())));
+        ventana.getBotonSumar().addActionListener(e -> ejecutar(() -> calcular(new Suma(leerPrimero(), leerSegundo()))));
+        ventana.getBotonRestar().addActionListener(e -> ejecutar(() -> calcular(new Resta(leerPrimero(), leerSegundo()))));
+        ventana.getBotonMultiplicar().addActionListener(e -> ejecutar(() -> calcular(new Multiplicacion(leerPrimero(), leerSegundo()))));
+        ventana.getBotonDividir().addActionListener(e -> ejecutar(() -> calcular(new Division(leerPrimero(), leerSegundo()))));
+        ventana.getBotonRaizCuadrada().addActionListener(e -> ejecutar(() -> calcular(new RaizCuadrada(leerPrimero()))));
+        ventana.getBotonRaizCubica().addActionListener(e -> ejecutar(() -> calcular(new RaizCubica(leerPrimero()))));
+        ventana.getBotonLogaritmoNatural().addActionListener(e -> ejecutar(() -> calcular(new LogaritmoNatural(leerPrimero()))));
         ventana.getBotonLimpiar().addActionListener(e -> limpiar());
     }
 
@@ -63,3 +63,4 @@ public class ControladorCalculadora {
         Operacion crear();
     }
 }
+
