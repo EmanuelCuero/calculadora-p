@@ -1,8 +1,11 @@
 package calculadora.controlador;
 
 import calculadora.modelo.Division;
+import calculadora.modelo.LogaritmoNatural;
 import calculadora.modelo.Multiplicacion;
 import calculadora.modelo.Operacion;
+import calculadora.modelo.RaizCuadrada;
+import calculadora.modelo.RaizCubica;
 import calculadora.modelo.Resta;
 import calculadora.modelo.Suma;
 import calculadora.vista.VentanaCalculadora;
@@ -16,6 +19,9 @@ public class ControladorCalculadora {
         ventana.getBotonRestar().addActionListener(e -> calcular(new Resta(leerPrimero(), leerSegundo())));
         ventana.getBotonMultiplicar().addActionListener(e -> calcular(new Multiplicacion(leerPrimero(), leerSegundo())));
         ventana.getBotonDividir().addActionListener(e -> calcular(new Division(leerPrimero(), leerSegundo())));
+        ventana.getBotonRaizCuadrada().addActionListener(e -> calcular(new RaizCuadrada(leerPrimero())));
+        ventana.getBotonRaizCubica().addActionListener(e -> calcular(new RaizCubica(leerPrimero())));
+        ventana.getBotonLogaritmoNatural().addActionListener(e -> calcular(new LogaritmoNatural(leerPrimero())));
     }
 
     private double leerPrimero() {
